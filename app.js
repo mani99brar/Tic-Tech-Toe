@@ -185,7 +185,7 @@ app.get("/flipkart",catchAsync(async(req,res)=>{
         finalfp.push(t2);
     })
     // console.log(finalfp);
-    res.render("analytics",{finalfp});
+    res.render("flipkart",{finalfp});
     
 }));
 

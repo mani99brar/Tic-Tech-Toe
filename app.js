@@ -77,6 +77,10 @@ app.listen(port,()=>{
 
 app.get("/",catchAsync(async(req,res)=>{
     
+
+
+
+
     if(req.session.log!=1){
         req.session.log = 0;
         const status = req.session.log;
@@ -105,6 +109,40 @@ app.get("/signin",(req,res)=>{
     res.render('signin');
 });
 
+app.get("/products",catchAsync(async(req,res)=>{
+        const idd = req.session.user;
+        console.log(req.session);
+        const status = req.session.log;
+        const t = await User.findOne({number:idd});
+        const prod = await product.find({user:t._id});
+        res.render('products',{prod});
+}));
+
+app.get("/orders",catchAsync(async(req,res)=>{
+    const n = req.session.user;
+    console.log("************");
+    const dealer = await User.findOne({ number: n});
+    // console.log(dealer._id);
+    var pp = await product.find({user : dealer._id});
+    var fp = [];
+    for(var i=0;i<pp.length;i++){
+        const l = pp[i]._id;
+        // console.log("PROD ID");
+        // console.log(l);
+        var z = await order.find({product_id:l});
+        // console.log(z);
+        for(var j=0;j<z.length;j++){
+            // console.log("//////////////////////");
+            // console.log(z[j]);
+            fp.push(z[j]);
+        }
+    }
+    console.log("|||||||||||||||||||||||00");
+    console.log(fp);
+    res.render('orders',{fp});
+}));
+
+
 app.get("/flipkart",catchAsync(async(req,res)=>{
     const n = req.session.user;
     console.log("************");
@@ -117,11 +155,14 @@ app.get("/flipkart",catchAsync(async(req,res)=>{
         console.log("PROD ID");
         console.log(l);
         var z = await order.find({product_id:l});
-        console.log(z);
+        console.log(z[0]);
+        console.log("//////////////////////");
+
         for(var j=0;j<z.length;j++){
-            // console.log("//////////////////////");
-            // console.log(z[j]);
+            if(z[j].website==='flipkart'){
             fp.push(z[j]);
+            }
+            // console.log(z[j]);
         }
     }
     console.log(fp);
@@ -143,10 +184,148 @@ app.get("/flipkart",catchAsync(async(req,res)=>{
         var t2 = new fpobj(value,key);
         finalfp.push(t2);
     })
-    console.log(finalfp);
+    // console.log(finalfp);
     res.render("analytics",{finalfp});
     
 }));
+
+
+app.get("/amazon",catchAsync(async(req,res)=>{
+    const n = req.session.user;
+    console.log("************");
+    const dealer = await User.findOne({ number: n});
+    // console.log(dealer._id);
+    var pp = await product.find({user : dealer._id});
+    var fp = [];
+    for(var i=0;i<pp.length;i++){
+        const l = pp[i]._id;
+        console.log("PROD ID");
+        console.log(l);
+        var z = await order.find({product_id:l});
+        console.log(z[0]);
+        console.log("//////////////////////");
+
+        for(var j=0;j<z.length;j++){
+            if(z[j].website==='amazon'){
+            fp.push(z[j]);
+            }
+            // console.log(z[j]);
+        }
+    }
+    console.log(fp);
+    var poan = new Map();
+    for(var i=0;i<fp.length;i++){
+        var p = poan.get(fp[i].product_id)*1;
+        if(p){
+            poan.set(fp[i].product_id,(fp[i].quantity*1)+p);
+        }else{
+            poan.set(fp[i].product_id,fp[i].quantity*1);
+        }
+    }
+    function fpobj(number,id){
+        this.id=id;
+        this.number=number
+    };
+    var finalfp=[];
+    poan.forEach((value,key)=>{
+        var t2 = new fpobj(value,key);
+        finalfp.push(t2);
+    })
+    // console.log(finalfp);
+    res.render("amazon",{finalfp});
+    
+}));
+app.get('/analyze',catchAsync(async(req,res)=>{
+
+    const n = req.session.user;
+    console.log("************");
+    const dealer = await User.findOne({ number: n});
+    // console.log(dealer._id);
+    var pp = await product.find({user : dealer._id});
+    var fp = [];
+    for(var i=0;i<pp.length;i++){
+        const l = pp[i]._id;
+        console.log("PROD ID");
+        console.log(l);
+        var z = await order.find({product_id:l});
+        console.log(z[0]);
+        console.log("//////////////////////");
+        var fc=0;
+        var ac=0;
+        var mc=0;
+
+        for(var j=0;j<z.length;j++){
+            if(z[j].website==='amazon'){
+            ac++;
+            }else if(z[j].website==='flipkart'){
+                fc++;
+            }else{
+                mc++;
+            }
+            // console.log(z[j]);
+        }
+    }
+    console.log(mc,ac,fc);
+    for(var i=0;i<fp.length;i++){
+        var p = poan.get(fp[i].product_id)*1;
+        if(p){
+            poan.set(fp[i].product_id,(fp[i].quantity*1)+p);
+        }else{
+            poan.set(fp[i].product_id,fp[i].quantity*1);
+        }
+    }
+
+
+
+    res.render('analytics');
+}));
+
+app.get("/myntra",catchAsync(async(req,res)=>{
+    const n = req.session.user;
+    console.log("************");
+    const dealer = await User.findOne({ number: n});
+    // console.log(dealer._id);
+    var pp = await product.find({user : dealer._id});
+    var fp = [];
+    for(var i=0;i<pp.length;i++){
+        const l = pp[i]._id;
+        console.log("PROD ID");
+        console.log(l);
+        var z = await order.find({product_id:l});
+        console.log(z[0]);
+        console.log("//////////////////////");
+
+        for(var j=0;j<z.length;j++){
+            if(z[j].website==='shopclues'){
+            fp.push(z[j]);
+            }
+            // console.log(z[j]);
+        }
+    }
+    console.log(fp);
+    var poan = new Map();
+    for(var i=0;i<fp.length;i++){
+        var p = poan.get(fp[i].product_id)*1;
+        if(p){
+            poan.set(fp[i].product_id,(fp[i].quantity*1)+p);
+        }else{
+            poan.set(fp[i].product_id,fp[i].quantity*1);
+        }
+    }
+    function fpobj(number,id){
+        this.id=id;
+        this.number=number
+    };
+    var finalfp=[];
+    poan.forEach((value,key)=>{
+        var t2 = new fpobj(value,key);
+        finalfp.push(t2);
+    })
+    // console.log(finalfp);
+    res.render("myntra",{finalfp});
+    
+}));
+
 
 
 app.post("/signin",catchAsync(async(req,res)=>{

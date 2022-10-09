@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+
+
+header{
+	display: flex;
+	justify-content: center;
+	height: 100vh;
+}
+header .con{
+	color: #fff;
+	font-size: 1.4rem;
+	width: 80%;
+	display: flex;
+	justify-content: space-between;
+}
+header ul{
+	padding: 20px 0px;
+	list-style: none;
+	display: flex;
+	width: 40%;
+	justify-content: space-evenly;
+}
+header .bghold{
+	position: absolute;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+}
+header .bghold img{
+	width: 100%;
+	height: 100%;
+}
+header .midtext{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-weight: 1000;
+	color: #fff;
+	position: absolute;
+	top: 200px;
+	animation: slideout 1.5s ease-in 0s 1 forwards;
+	transform: translateX(50px);
+
+}
+header h5{
+	font-size: 3rem;
+	opacity: 0;
+	animation: kardo 1s ease-in 1.5s 1 forwards;
+
+}
+.mid{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #07bba0;
+    padding: 145px 0px;
+}
+.mid .con{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mid .con h1{
+    font-weight: 1000;
+    font-size: 3rem;
+	color: #fff;
+    padding-bottom: 5px;
+    border-bottom: #fff;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+.mid .con section{
+    width: 20%;
+}
+.mid .con div{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+.mid .con section img{
+    width: 100%;
+    height: 100%;
+}
+.phome{
+    width: 100%;
+    display: flex;
+    background-color: bisque;
+    justify-content: center;
+    padding: 150px 0px;
+}
+.phome .con{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+.phome .con h1{
+    color: #fff;
+    font-size: 3rem;
+}
+.phome .prodhold{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+.phome .prodhold div{
+    width: 40%;
+}
+.phome .prodhold .pright{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.phome .prodhold .pright .outv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* flex-direction: column; */
+    justify-content: space-around;
+
+    flex-wrap: wrap;
+    
+}
+.phome .prodhold .pright .outv div{
+    width: 35%;
+    
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.phome .prodhold .pright .outv div section{
+    width: 100%;
+}
+.phome .prodhold .pright .outv div section img{
+    width: 100%;
+    height: 100%;
+}
+.analyze{
+    background-color: #ce24cbcd;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 150px 0px;
+}
+
+.analyze .con{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.analyze .hanal{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.analyze .hanal section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+.analyze .hanal section div{
+    width: 30%;
+}
+.analyze .hanal section div img{
+    width: 100%;
+}
+
+@keyframes kardo {
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+	
+}
+header .midtext section{
+	font-size: 4rem;
+
+	display: flex;
+}
+@keyframes slideout {
+	0%{
+		transform: translateX(190px);
+	}
+	100%{
+		transform: translateX(0px);
+	}
+	
+}
+header .midtext div{
+	overflow: hidden;
+}
+header .midtext div h1{
+	position: relative;
+	left: -280px;
+	animation: slide 1.5s ease-in 0s 1 forwards;
+}
+@keyframes slide {
+	0%{
+		left:-280px;
+	}
+	/* 80%{
+		left: 10px;
+	} */
+	100%{
+		left: 0px;
+	}
+	
+}
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background:white;
+	
+}
+#platform-data{
+    text-align: center;
+    /* border: 2px solid rgb(109, 109, 109); */
+    margin: 10px 0;
+}
+.platforms-data{
+    height: 100px;
+    width:100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.platforms-data button{
+    width: 200px;
+    height: 70px;
+    margin: 10px 50px;
+    font-family: 'Poppins', sans-serif;
+	font-weight: 500;
+	font-size: 15px;
+    border:none;
+    border-radius: 20px;
+    background-color: #07bba0;
+    box-shadow: 5px 5px 5px grey;
+}
+.platforms-data button:active{
+    transform: translate(5px, 5px);
+    box-shadow: 0px 0px 0px grey;
+}
+.platforms-data a{
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+.platforms-data a:hover{
+    text-decoration: underline;
+}
+#products-data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.products-data{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 100px;
+    
+}
+.pr-data{
+    margin: 20px;
+    padding: 20px;
+}
+.pr-data img{
+    height: 200px;
+    width: 200px;
+}
+.pr-data h5{
+    font-weight: 300;
+    text-align: center;
+}
+.pr-data h4{
+    text-align: center;
+}
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+#amz-head {
+    font-weight: 500;
+    font-size: 30px;
+    text-align: center;
+}
+
+#flipkart-head h3 {
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+}
+
+#charts{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+canvas{
+    max-height: 500px;
+    max-width: 500px;
+    padding: 20px 80px;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+	font-weight: 300;
+	font-size: 15px;
+	line-height: 1.7;
+	overflow-x: hidden;
+}
+#product-details{
+    display: flex;
+    margin: 100px;
+    position:absolute;
+    align-content: center;
+    justify-content: center;
+}
+.product-details{
+    margin: 30px;
+    text-align: left;
+    font-size: 26px;
+    padding: 0 30px;
+    position: relative;
+    left: 120px;
+    top: 39px;
+}
+.product-details h1{
+    font-weight: 500;
+}
+.product-details h3{
+    font-weight: 400;
+}
+.product-details h4{
+    font-weight: 400;
+}
+.product-details h5{
+    font-size: 16px;
+    font-weight: 300;
+    margin: 5px;
+}

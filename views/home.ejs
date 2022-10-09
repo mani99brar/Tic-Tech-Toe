@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Joshi.css">
+</head>
+
+<body>
+    <!-- // add header here. -->
+
+    <header>
+        <div class="con">
+            <ul class="topl">
+                <li><a>Analyzie</a></li>
+                <li><a>Platforms</a></li>
+                <li><a>Products</a></li>
+            </ul>
+            <ul class="topr">
+                <%if(status==0){%>
+                    <a href="/signin">Login</a>
+                    <%}else{%>
+                        <h3><%=t.name%></h3>
+                    <%}%>
+    
+            </ul>
+    
+        </div>
+        <div class="bghold">
+            <img src="finalbg.jpg" alt="">
+        </div>
+        <div class="midtext">
+            <section>
+                <h1>E-</h1>
+            <div>
+            <h1>YAAR</h1>
+
+            </div>
+            </section>
+            <h5>Bechdo BASS!</h5>
+            
+        </div>
+
+        
+        
+    </header>
+    <div class="mid">
+        <div class="con">
+            <h1>Platforms</h1>
+            <div>
+                <section>
+                    
+                    <a href="/amazon"><img src="amazon.png" alt=""></a>
+                </section>
+                <section>
+                    <a href="/flipkart">
+                    <img src="flipkart.png" alt="">
+
+                    </a>
+                </section>
+                <section>
+                    <a href="/myntra">
+                    <img src="myntra.png" alt="">
+
+                    </a>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="phome">
+        <div class="con">
+            <h1>Products</h1>
+            <div class="prodhold">
+                <div class="pleft">
+                    <h5>Manage and visualize your inventory here!</h5>
+                </div>
+                <div class="pright">
+                    <h3>Top 3 Products</h3>
+                    <div class="outv">
+                        <div>
+                            <section><img src="umbrella.jpg" alt=""></section>
+                            <p>Umbrella</p>
+                        </div>
+                        <div>
+                            <section><img src="bottle.jpeg" alt=""></section>
+                            <p>Bottle</p>
+                        </div>
+                        <div>
+                            <section><img src="phone.jpeg" alt=""></section>
+                            <p>Phone</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="analyze">
+        <div class="con">
+            <h1>
+                Analyze
+            </h1>
+            <div class="hanal">
+                <section>
+                    <p>Your One place to visualize and plan your growth.</p>
+                    <a href="/analyze"></a>
+                    </section>
+                <section>
+                    <div>
+                    <img src="bar.png" alt="">
+                    </div>
+                    <div>
+                    <img src="pie.png" alt="">
+
+                        </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+        
+    
+</body>
+
+</html>

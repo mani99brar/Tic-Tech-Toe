@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/full.css">
+    <title>Login</title>
+</head>
+<body>  
+    <form action="/signin" method = "POST" novalidate class="validated-form  addbgadmin">
+
+        <div class="mb-3">
+            <label class="form-label" for="image">Number</label>
+            <input class="form-control" type="text" id="image1" name="user[number]" required>
+            <div class="valid-feedback">
+                Looks Good
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <label class="form-label" for="image">Password</label>
+            <input class="form-control" type="text" id="image3" name="user[pass]" required>
+            <div class="valid-feedback">
+                Looks Good
+            </div>
+        </div>
+        <div class="mb-3">
+             <button class="btn btn-success">Add user</button>
+    
+        </div>
+        
+    </form>
+</body>
+</html>

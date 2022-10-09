@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/full.css">
+    <title>Login</title>
+</head>
+<body>  
+    <form action="/signup" method = "POST" novalidate class="validated-form  addbgadmin">
+
+        <div class="mb-3">
+            <label class="form-label"  for="title">Name</label>
+            <input class="form-control" type="text" id="title" name="product[name]" required>
+        </div>
+        
+        <div class="mb-3">
+            <label class="form-label" for="image">Mail</label>
+            <input class="form-control" type="text" id="image1" name="product[mail]" required>
+            <div class="valid-feedback">
+                Looks Good
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="image">Number</label>
+            <input class="form-control" type="text" id="image1" name="product[number]" required>
+            <div class="valid-feedback">
+                Looks Good
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="image">Amazon Id</label>
+            <input class="form-control" type="text" id="image2" name="product[aid]" required>
+            <div class="valid-feedback">
+                Looks Good
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="image">Myntra ID</label>
+            <input class="form-control" type="text" id="image3" name="product[mid]" required>
+            <div class="valid-feedback">
+                Looks Good
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="image">Flipkart Id</label>
+            <input class="form-control" type="text" id="image3" name="product[fid]" required>
+            <div class="valid-feedback">
+                Looks Good
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="image">Password</label>
+            <input class="form-control" type="text" id="image3" name="product[pass]" required>
+            <div class="valid-feedback">
+                Looks Good
+            </div>
+        </div>
+        <div class="mb-3">
+             <button class="btn btn-success">Add Product</button>
+    
+        </div>
+        
+    </form>
+</body>
+</html>
+<!-- <script>
+    var login = document.getElementById('loginbt');
+    var signin = document.getElementById('signin');
+    var signup = document.getElementById('signup');
+
+    var logstat = 0;
+    login.onclick = function() {loginftn()};
+
+    function loginftn(){
+        if(logstat==0){
+            logstat =1;
+            signup.style.display="Block";
+            signin.style.display="None";
+        }else{
+            logstat =0;
+            signin.style.display="Block";
+            signup.style.display="None";
+            
+        }
+    }
+
+
+</script> -->
